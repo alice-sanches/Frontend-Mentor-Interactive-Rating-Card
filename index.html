@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Frontend Mentor | Interactive Rating Component</title>
+    </head>
+    <body>
+        <main>
+            <div class="full-page">
+                <div class="main-container" id="main-rating-container">
+                    <div class="star-icon">
+                        <img src="images\icon-star.svg" alt="star" class="star">
+                    </div>
+                    <div class="text">
+                        <h1>How did we do?</h1>
+                        <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+                    </div>
+                    <form> <!--needs to be changed-->
+                        <div class="rating-container">  
+                            <input type="radio" name="radio" value="1" id="1" autocomplete="off"> 
+                            <label class="number-rating" id="label-1" for="1">1</label>
+                            <input type="radio" name="radio" value="2" id="2" autocomplete="off">     
+                            <label class="number-rating" id="label-2" for="2">2</label>
+                            <input type="radio" name="radio" value="3" id="3" autocomplete="off">     
+                            <label class="number-rating" id="label-3" for="3">3</label>
+                            <input type="radio" name="radio" value="4" id="4" autocomplete="off">    
+                            <label class="number-rating" id="label-4" for="4">4</label>
+                            <input type="radio" name="radio" value="5" id="5" autocomplete="off">    
+                            <label class="number-rating" id="label-5" for="5">5</label>       
+                        </div>
+                        <button type="button" onclick="displayThankYouCard(getRatingValue())">SUBMIT</button>
+                        <script>
+                            function getRatingValue() {
+                                let valuesArray = document.getElementsByName("radio");
+                                let rating;
+                                for(i = 0; i < valuesArray.length; i++) {
+                                    if (valuesArray[i].checked) {
+                                        rating = valuesArray[i].value;
+                                    }
+                                }
+                                return rating;
+                            }
+
+                            function displayThankYouCard(rating) {
+                                document.getElementById("main-rating-container").style.display = "none";
+                                document.getElementById("hidden-section").style.display = "flex";
+                                document.getElementById("you-rated").innerHTML = "You selected " + rating + " out of 5";
+                            }
+                        </script>
+                    </form>
+                </div>
+                <!--thank you note section-->
+                <div id="hidden-section">
+                    <div class="main-container" id="thank-you-main">
+                        <div class="illustration">
+                            <img src="images/illustration-thank-you.svg" alt="mobile vector illustration" class="illustration">
+                        </div>
+                        <div class="rating-message">
+                            <p id="you-rated"></p>
+                        </div>
+                        <div class="thank-you-text-container">
+                            <h1 class="thank-you">
+                                Thank you!
+                            </h1>
+                            <p class="appreciation-message">
+                                We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

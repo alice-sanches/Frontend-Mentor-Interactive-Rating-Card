@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --background-color: hsl(216, 12%, 8%);
+    --headings-color: hsl(0, 0%, 100%);
+    --text-color: hsl(217, 12%, 63%);
+    --card-color: hsl(213, 19%, 18%);
+    --active-state-background: hsl(216, 12%, 54%);
+    --highlight-color: hsl(25, 97%, 53%);
+    font-size: 93.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Overpass", sans-serif;
+}
+
+main {
+    height: 100vh;
+}
+
+.full-page {
+    background-color: var(--background-color);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-container {
+    width: 325px;
+    height: 350px;
+    margin: auto;
+    background: linear-gradient(
+        var(--card-color),
+        hsla(213, 19%, 18%, 30%)
+    );
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+div.star-icon {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: hsla(216, 12%, 54%, 20%);
+    display: flex;
+    align-items: center;
+}
+
+img.star {
+    margin: auto;
+    width: 35%;
+}
+
+
+h1 {
+    color: var(--headings-color);
+    font-size: 1.6rem;
+}
+
+p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.3rem;
+}
+
+div.text {
+    margin-top: 0.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    gap: 1.5rem;
+}
+
+
+div.rating-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    height: 3rem;
+    width: 100%;
+    padding: 0;
+}
+
+input[type=radio] {
+    visibility: hidden;
+    display: none;
+}
+
+.rating-container label {
+    color: var(--text-color);
+    background-color: hsla(216, 12%, 54%, 20%);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.9rem;
+    width: 3rem;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.rating-container label:hover {
+    background-color: var(--highlight-color);
+    color: var(--headings-color);
+}
+
+.rating-container input[type=radio]:checked + label {
+    background-color: var(--active-state-background);
+    color: var(--headings-color);
+}
+
+
+button {
+    width: 100%;
+    height: 3rem;
+    background-color: var(--highlight-color);
+    border-radius: 2rem;
+    border: none;
+    color: var(--headings-color);
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--headings-color);
+    color: var(--highlight-color);
+}
+
+#hidden-section {
+    display: none;
+    margin: auto;
+}
+
+div#thank-you-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+img.illustration {
+    margin-top: 0.5rem;
+}
+
+div.rating-message {
+    text-align: center;
+    background-color: hsla(216, 12%, 54%, 20%);
+    color: var(--highlight-color); 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+}
+
+.thank-you-text-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h1.thank-you, p.appreciation-message {
+    margin: 0;
+    padding: 0;
+}
+
+h1.thank-you {
+    padding-bottom: 0.5rem;
+}
+
+p#you-rated {
+    color: var(--highlight-color);
+}
